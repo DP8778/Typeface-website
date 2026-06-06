@@ -1,4 +1,5 @@
 import "./globals.css";
+import InitialLoader from "./components/InitialLoader";
 
 
 export const metadata = {
@@ -12,7 +13,7 @@ export default function RootLayout({ children }) {
       <body
         className={` antialiased`}
       >
-        
+        <InitialLoader />
         {children}
       </body>
     </html>

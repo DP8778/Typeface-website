@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react'
+import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion';
 import Butt from './Butt/index.jsx';
 import styles from './Headertwo.module.scss';
@@ -27,6 +28,19 @@ export default function Index() {
 
     return (
         <div className={styles.header}>
+
+            {/* LOGO */}
+            <div className={styles.logo}>
+                <Image
+                    src="/Typeface.png"
+                    alt="Typeface"
+                    width={80}
+                    height={24}
+                    priority
+                />
+            </div>
+
+            {/* MENU */}
             <motion.div 
                 className={styles.menu}
                 variants={menu}
@@ -37,7 +51,11 @@ export default function Index() {
                     {isActive && <Nav />}
                 </AnimatePresence>
             </motion.div>
-            <Butt isActive={isActive} toggleMenu={() => {setIsActive(!isActive)}}/>
+
+            <Butt 
+                isActive={isActive} 
+                toggleMenu={() => setIsActive(!isActive)} 
+            />
         </div>
     )
 }

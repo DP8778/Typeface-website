@@ -6,8 +6,9 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 
 const pairs = [
-  [ '/deardiary.png','/galery/typeface1.png'],
+  
   ['/galery/port-1.png', '/galery/portB-1.png'],
+  [ '/deardiary.png','/galery/typeface1.png'],
   ['/galery/portC-1.png', '/fan-pic2.png'],
 ];
 

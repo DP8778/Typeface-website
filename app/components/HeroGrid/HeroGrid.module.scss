@@ -1,0 +1,120 @@
+.heroGrid {
+  --tile-size: clamp(140px, min(18vw, 28vh), 320px);
+
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #f4f1e9;
+}
+
+.tileGrid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  grid-template-columns: repeat(8, var(--tile-size));
+  grid-template-rows: repeat(6, var(--tile-size));
+  transform: translate(-50%, -50%);
+}
+
+.tile {
+  width: 100%;
+  height: var(--tile-size);
+  position: relative;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.cream {
+  background: #fffdf7;
+}
+
+.stone {
+  background: #eeede8;
+}
+
+.silver {
+  background: #f3f2ec;
+}
+
+.slate {
+  background: #e3e2dd;
+}
+
+.ivory {
+  background: #fffdf3;
+}
+
+.green {
+  background: #00864b;
+  z-index: 1;
+}
+
+.blue {
+  background: #2357f4;
+  z-index: 1;
+}
+
+.red {
+  background: #ff2a12;
+  z-index: 1;
+}
+
+.pink {
+  background: #f379d5;
+  z-index: 1;
+}
+
+.orange {
+  background: #eda300;
+  z-index: 1;
+}
+
+.yellow {
+  background: #ffbd19;
+  z-index: 1;
+}
+
+.imageTile {
+  isolation: isolate;
+}
+
+.titleTile {
+  background: #fffdf7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 3vw, 56px);
+
+  h1 {
+    color: #111;
+    font-family: "condensed-j2", sans-serif;
+    font-size: clamp(36px, 4.4vw, 82px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: 0;
+    margin: 0;
+    max-width: 11ch;
+    text-align: left;
+  }
+}
+
+@media (max-width: 700px) {
+  .heroGrid {
+    --tile-size: clamp(92px, 30vw, 170px);
+  }
+
+  .titleTile {
+    padding: 16px;
+
+    h1 {
+      font-size: clamp(25px, 7vw, 42px);
+    }
+  }
+}

@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
+import PortfolioPage from './Portfolio/page';
 
 export default function Page() {
-  redirect('/Portfolio'); // nebo jakákoliv jiná existující route
+  return <PortfolioPage />;
 }
