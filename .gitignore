@@ -12,6 +12,7 @@
 # next.js
 /.next/
 /out/
+/storybook-static/
 
 # production
 /build
@@ -24,6 +25,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+debug-storybook.log
+storybook-dev*.log
 
 # local env files
 .env*.local

@@ -1,27 +1,47 @@
 .heroGrid {
-  --tile-size: clamp(140px, min(18vw, 28vh), 320px);
-
-  height: 100vh;
-  position: relative;
+  min-height: calc(100vh - 150px);
+  padding: clamp(42px, 5.4vw, 72px) clamp(18px, 4.8vw, 61px)
+    clamp(56px, 7.6vw, 96px);
+  background: #fff;
   overflow: hidden;
-  background: #f4f1e9;
 }
 
-.tileGrid {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.copy {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  h1 {
+    max-width: 590px;
+    margin: 0;
+    color: #000;
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(36px, 3.45vw, 47px);
+    font-weight: 400;
+    line-height: 0.86;
+    letter-spacing: 0;
+  }
+}
+
+.mosaic {
+  --tile-size: min(14.95vw, 191px);
+
   display: grid;
-  grid-template-columns: repeat(8, var(--tile-size));
-  grid-template-rows: repeat(6, var(--tile-size));
-  transform: translate(-50%, -50%);
+  grid-template-columns: repeat(6, var(--tile-size));
+  grid-template-rows: repeat(2, var(--tile-size));
+  grid-template-areas:
+    "top1 top2 top3 top4 top5 top6"
+    "bottom1 bottom2 bottom3 bottom4 empty bottom6";
+  width: fit-content;
+  margin: clamp(78px, 8vw, 102px) auto 0;
 }
 
 .tile {
-  width: 100%;
-  height: var(--tile-size);
   position: relative;
+  width: var(--tile-size);
+  aspect-ratio: 1;
   overflow: hidden;
+  background: #fff;
 
   img {
     display: block;
@@ -31,90 +51,28 @@
   }
 }
 
-.cream {
-  background: #fffdf7;
-}
-
-.stone {
-  background: #eeede8;
-}
-
-.silver {
-  background: #f3f2ec;
-}
-
-.slate {
-  background: #e3e2dd;
-}
-
-.ivory {
-  background: #fffdf3;
-}
-
-.green {
-  background: #00864b;
-  z-index: 1;
-}
-
-.blue {
-  background: #2357f4;
-  z-index: 1;
-}
-
-.red {
-  background: #ff2a12;
-  z-index: 1;
-}
-
-.pink {
-  background: #f379d5;
-  z-index: 1;
-}
-
-.orange {
-  background: #eda300;
-  z-index: 1;
-}
-
-.yellow {
-  background: #ffbd19;
-  z-index: 1;
-}
-
-.imageTile {
-  isolation: isolate;
-}
-
-.titleTile {
-  background: #fffdf7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(20px, 3vw, 56px);
-
-  h1 {
-    color: #111;
-    font-family: "condensed-j2", sans-serif;
-    font-size: clamp(36px, 4.4vw, 82px);
-    font-weight: 400;
-    line-height: 0.95;
-    letter-spacing: 0;
-    margin: 0;
-    max-width: 11ch;
-    text-align: left;
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   .heroGrid {
-    --tile-size: clamp(92px, 30vw, 170px);
+    min-height: auto;
+    padding-top: 38px;
   }
 
-  .titleTile {
-    padding: 16px;
+  .copy h1 {
+    max-width: 360px;
+    font-size: clamp(32px, 10.6vw, 42px);
+    line-height: 0.9;
+  }
 
-    h1 {
-      font-size: clamp(25px, 7vw, 42px);
-    }
+  .mosaic {
+    --tile-size: min(29.5vw, 150px);
+
+    grid-template-columns: repeat(3, var(--tile-size));
+    grid-template-rows: repeat(4, var(--tile-size));
+    grid-template-areas:
+      "top1 top2 top3"
+      "top4 top5 top6"
+      "bottom1 bottom2 bottom3"
+      "bottom4 empty bottom6";
+    margin-top: 54px;
   }
 }
